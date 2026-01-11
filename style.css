@@ -1,0 +1,180 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative; /* Para posicionar o indicator */
+}
+
+.menu-principal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu-item {
+    margin: 0 15px;
+    position: relative; /* Para posicionar o submenu */
+}
+
+.menu-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+
+.has-submenu > a::after {
+    content: '\25BE'; /* Seta para baixo */
+    margin-left: 5px;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    z-index: 10;
+    display: none; /* Inicialmente oculto */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.has-submenu.open-submenu > .submenu {
+    display: block; /* Exibe o submenu quando a classe 'open-submenu' está presente */
+}
+
+.submenu-item a {
+    padding: 10px 15px;
+    display: block;
+}
+
+.submenu-item a:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Oculto em telas maiores */
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.menu-toggle.open .hamburger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .hamburger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #fdd835;
+    transition: 0.3s;
+}
+
+.menu-item.active > a {
+    font-weight: bold;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .menu-principal {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .menu-principal.open {
+        display: flex;
+    }
+
+    .menu-item {
+        margin: 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .menu-item a {
+        padding: 15px 20px;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        display: none; /* Inicialmente oculto em mobile também */
+        background-color: #444;
+        padding-left: 20px;
+    }
+
+    .has-submenu > a::after {
+        content: '\25BE'; /* Mantém a seta */
+    }
+
+    .has-submenu.open-submenu > .submenu {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .indicator {
+        display: none; /* Oculta o indicador em mobile */
+    }
+}

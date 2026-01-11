@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Responsivo e Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul class="menu-principal" id="menu-principal">
+                <li class="menu-item">
+                    <a href="#" data-item="home">Home</a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a href="#" data-item="produtos">Produtos</a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="#" data-item="eletronicos">Eletrônicos</a></li>
+                        <li class="submenu-item"><a href="#" data-item="vestuario">Vestuário</a></li>
+                        <li class="submenu-item"><a href="#" data-item="livros">Livros</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a href="#" data-item="servicos">Serviços</a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="#" data-item="consultoria">Consultoria</a></li>
+                        <li class="submenu-item"><a href="#" data-item="treinamento">Treinamento</a></li>
+                        <li class="submenu-item"><a href="#" data-item="suporte">Suporte</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#" data-item="contato">Contato</a>
+                </li>
+            </ul>
+            <div class="indicator"></div>
+        </nav>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>

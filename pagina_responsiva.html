@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<title>Site Responsivo</title>
+	<link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="logo">Meu Site</div>
+			<div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Agora o ícone aparece -->
+
+			<ul id="nav-menu" class="nav-menu">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#sobre">Sobre</a></li>
+				<li><a href="#serviços">Serviços</a></li>
+				<li><a href="#contato">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="home">
+			<h1>Bem-vindo ao Meu Site</h1>
+			<p>Este é um site responsivo com um menu de navegação.</p>
+		</section>
+		
+		<section id="sobre">
+			<h2>Sobre</h2>
+			<p>Informações sobre o site ou empresa.</p>
+		</section>
+
+		<section id="serviços">
+			<h2>Serviços</h2>
+			<p>Detalhes sobre os serviços oferecidos.</p>
+		</section>
+		
+		<section id="contato">
+			<h2>Contato</h2>
+			<p>Informações de contato.</p>
+		</section>
+	</main>
+	 
+	<footer>
+		<p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+	</footer>
+	 
+	<script>
+		function toggleMenu() {
+			var menu = document.getElementById("nav-menu");	 	
+			if (menu.classList.contains("active")) {
+				menu.classList.remove("active");			
+			} else {
+				menu.classList.add("active");			
+			}
+		}
+	</script>
+</body>
+
+</html>
+
